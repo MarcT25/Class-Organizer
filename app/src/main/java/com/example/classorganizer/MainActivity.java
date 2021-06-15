@@ -11,6 +11,8 @@ import android.widget.Button;
 import com.example.classorganizer.databinding.ActivityMainBinding;
 import com.parse.ParseUser;
 
+
+//marcos
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
