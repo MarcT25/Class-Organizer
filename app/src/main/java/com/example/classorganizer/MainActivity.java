@@ -24,23 +24,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logOut();
-            }
+
+        binding.nvNavigation.getMenu().findItem(R.id.logout).setOnMenuItemClickListener(menuItem -> {
+            logOut();
+            return true;
+
         });
-
     }
 
-    private void logOut() {
-        ParseUser.logOut();
-        ParseUser currentUser = ParseUser.getCurrentUser();
+        private void logOut () {
+            ParseUser.logOut();
+            ParseUser currentUser = ParseUser.getCurrentUser();
 
-        Intent i = new Intent(this, LoginActivity.class);
-        startActivity(i);
-        finish();
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
+            finish();
+        }
+
+
     }
-
-
-}

@@ -5,9 +5,10 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+        android:gravity="center_vertical">
 
-    <TextView
+   <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -16,18 +17,48 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/ivUpcoming"
+            android:layout_width="380dp"
+            android:layout_height="375dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="9dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/upcoming_box" />
+
+        <ImageView
+            android:id="@+id/ivsSchedule"
+            android:layout_width="367dp"
+            android:layout_height="219dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="161dp"
-            android:layout_marginBottom="60dp"
-            android:text="test Logout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="632dp" />
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="66dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/schedule_box" />
+
+        <ImageButton
+            android:id="@+id/btnAdd"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ivUpcoming"
+            android:layout_alignEnd="@+id/ivUpcoming"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="339dp"
+            android:layout_marginEnd="113dp"
+            android:backgroundTint="@color/orange_40"
+            android:src="@drawable/add_events" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nvNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/nav_bar_bottom"
+            app:menu="@menu/bottom_nav_menu"/>
+
     </RelativeLayout>
 
 </layout>
