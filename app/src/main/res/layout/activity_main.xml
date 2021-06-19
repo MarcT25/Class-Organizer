@@ -6,58 +6,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-        android:gravity="center_vertical">
-
-   <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center_vertical"
+        android:backgroundTint="@color/transparent">
 
         <ImageView
             android:id="@+id/ivUpcoming"
-            android:layout_width="380dp"
-            android:layout_height="375dp"
+            android:layout_width="356dp"
+            android:layout_height="385dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="5dp"
             android:adjustViewBounds="true"
             android:src="@drawable/upcoming_box" />
 
         <ImageView
-            android:id="@+id/ivsSchedule"
-            android:layout_width="367dp"
-            android:layout_height="219dp"
+            android:id="@+id/ivSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="23dp"
-            android:layout_marginBottom="66dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="43dp"
             android:adjustViewBounds="true"
             android:src="@drawable/schedule_box" />
 
         <ImageButton
             android:id="@+id/btnAdd"
-            android:layout_width="155dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/ivUpcoming"
             android:layout_alignEnd="@+id/ivUpcoming"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="339dp"
-            android:layout_marginEnd="113dp"
-            android:backgroundTint="@color/orange_40"
+            android:layout_marginTop="343dp"
+            android:layout_marginEnd="132dp"
+            android:backgroundTint="@color/transparent"
             android:src="@drawable/add_events" />
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ivSchedule"
+            android:layout_alignEnd="@+id/ivSchedule"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="182dp"
+            android:layout_marginEnd="172dp"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/editbtn" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nvNavigation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
             android:layout_alignParentBottom="true"
             android:src="@drawable/nav_bar_bottom"
-            app:menu="@menu/bottom_nav_menu"/>
+            app:menu="@menu/bottom_nav_menu" />
+
 
     </RelativeLayout>
 
