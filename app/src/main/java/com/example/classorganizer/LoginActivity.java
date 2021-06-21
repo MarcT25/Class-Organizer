@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //This is databinding, if you are unfamiliar how to use this then refer to boilerplate
     private ActivityLoginBinding binding;
+
     /*
         To call a specific layout variable, simply do binding.*   with * being whatever the layout variable is called
         Example:  binding.etUsername.getText().toString();
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //THIS IS JUST FOR DATA BINDING, IF YOU ARE NOT USING DATA BINDING THEN YOU CAN FORGO THE PREFIX
         binding = DataBindingUtil.setContentView(this,R.layout.activity_login);
 
@@ -53,6 +56,15 @@ public class LoginActivity extends AppCompatActivity {
 
                 loginUser(username, password);
 
+            }
+        });
+
+        //Upon clicking the signup button
+        binding.btnSignUpPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(), SignUpActivity.class);
+                startActivity(i);
             }
         });
 
