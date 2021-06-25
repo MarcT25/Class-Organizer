@@ -21,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseUser;
 
 
-//marcos
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
