@@ -1,9 +1,9 @@
 # Class-Organizer
 
 ## User Stories (MVP)
-* [] User can Log In or Sign Up
+* [x] User can Log In or Sign Up
     * [] User can add Courses and Professors
-* [] User can see their class schedule
+* [x] User can see their class schedule
 * [] Users add and view events in their homepage 
 * [] Users can also view added events on their calender in another fragment for a better visual experience
 
