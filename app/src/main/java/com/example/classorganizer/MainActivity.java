@@ -33,15 +33,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-<<<<<<< HEAD
-//        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                logOut();
-//            }
-//        });
+       binding.btnLogout.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               logOut();
+           }
+       });
 
-=======
         //listener for navigation bar, will switch to a new fragment depending on what menu item bottom is pressed, if logout is pressed it will logout the section.
         binding.nvNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //defaults to the homepage after logging in.
         binding.nvNavigation.setSelectedItemId(R.id.home);
->>>>>>> 06d1a886c450676b472e19d056b63b00b80ae766
+
     }
 
         private void logOut () {
