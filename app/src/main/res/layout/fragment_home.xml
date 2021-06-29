@@ -2,53 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="fragments.homeFragment">
+    android:layout_height="match_parent" >
+    <!--tools:context="fragments.homeFragment"-->
 
-    <ImageView
-        android:id="@+id/ivUpcoming"
-        android:layout_width="356dp"
-        android:layout_height="385dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="5dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/upcoming_box" />
-
-    <ImageView
-        android:id="@+id/ivSchedule"
-        android:layout_width="wrap_content"
-        android:layout_height="220dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="43dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/schedule_box" />
-
-    <ImageButton
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/ivUpcoming"
-        android:layout_alignEnd="@+id/ivUpcoming"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="343dp"
-        android:layout_marginEnd="132dp"
-        android:backgroundTint="@color/transparent"
-        android:src="@drawable/add_events" />
-
-    <ImageButton
-        android:id="@+id/btnEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/ivSchedule"
-        android:layout_alignEnd="@+id/ivSchedule"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="182dp"
-        android:layout_marginEnd="172dp"
-        android:backgroundTint="@color/transparent"
-        android:src="@drawable/editbtn" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

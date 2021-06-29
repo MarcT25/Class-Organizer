@@ -25,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
 
+    private Button classDetails;
+
     private ActivityMainBinding binding;
+
+
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
@@ -33,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        classDetails = (Button) findViewById(R.id.button);
+        classDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openClassDetails();
+            }
+        });
        /*
        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -61,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new calendarFragment();
                         break;
                     case R.id.logout:
-                        Toast.makeText(MainActivity.this, "log out", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
                         logOut();
                         break;
                 }
@@ -81,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
             finish();
+        }
+
+        public void openClassDetails() {
+            Intent intent = new Intent(this, ClassDetailsActivity.class);
+            startActivity(intent);
         }
 
 
