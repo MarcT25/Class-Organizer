@@ -22,7 +22,6 @@
                 android:src="@drawable/nav_bar_bottom"
                 app:menu="@menu/bottom_nav_menu" />
 
-        <!--            PROBLEM HERE
         <ImageView
             android:id="@+id/imageView24"
             android:layout_width="wrap_content"
@@ -34,8 +33,7 @@
             android:layout_marginLeft="53dp"
             android:layout_marginTop="21dp"
             app:srcCompat="@drawable/upcoming_box" />
-            -->
-
+s
         <TextView
             android:id="@+id/textView5"
             android:layout_width="235dp"
