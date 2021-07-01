@@ -5,18 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import fragments.calendarFragment;
-import fragments.contactsFragment;
-import fragments.homeFragment;
+import com.example.classorganizer.fragments.calendarFragment;
+import com.example.classorganizer.fragments.contactsFragment;
+import com.example.classorganizer.fragments.homeFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.classorganizer.databinding.ActivityMainBinding;
+import com.example.classorganizer.fragments.logoutFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseUser;
 
@@ -26,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
     private ActivityMainBinding binding;
-    final FragmentManager fragmentManager = getSupportFragmentManager();
+    //private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final FragmentManager fragmentManager = getSupportFragmentManager();        //this needs to be called AFTER onCreate, not before.
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
 
        /*
        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.logout:
                         Toast.makeText(MainActivity.this, "log out", Toast.LENGTH_SHORT).show();
+                        fragment = new logoutFragment();
                         logOut();
                         break;
                 }
@@ -74,13 +76,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+        Conditional checks to prevent a nonvalid user from logging off and thus, crashing the app.
+     */
         private void logOut () {
-            ParseUser.logOut();
             ParseUser currentUser = ParseUser.getCurrentUser();
-
-            Intent i = new Intent(this, LoginActivity.class);
-            startActivity(i);
-            finish();
+            if (currentUser != null){
+                ParseUser.logOut();
+            } else if (currentUser == null){
+                Intent i = new Intent(this, LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
         }
 
 
