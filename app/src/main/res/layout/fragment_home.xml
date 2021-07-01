@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!---tools:context="fragments.homeFragment"> -->
 
     <ImageView
         android:id="@+id/ivUpcoming"
@@ -15,6 +16,7 @@
         android:adjustViewBounds="true"
         android:src="@drawable/upcoming_box" />
 
+    <!---
     <ImageView
         android:id="@+id/ivSchedule"
         android:layout_width="wrap_content"
@@ -24,7 +26,7 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="43dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/schedule_box" />
+        android:src="@drawable/schedule_box" /> -->
 
     <ImageButton
         android:id="@+id/btnAdd"
@@ -37,17 +39,5 @@
         android:layout_marginEnd="132dp"
         android:backgroundTint="@color/transparent"
         android:src="@drawable/add_events" />
-
-    <ImageButton
-        android:id="@+id/btnEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/ivSchedule"
-        android:layout_alignEnd="@+id/ivSchedule"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="182dp"
-        android:layout_marginEnd="172dp"
-        android:backgroundTint="@color/transparent"
-        android:src="@drawable/editbtn" />
 
 </RelativeLayout>

@@ -53,7 +53,7 @@ public class SchoolSignUpActivity extends AppCompatActivity {
         binding.btnUserSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SchoolSignUpActivity.this, MainActivity.class);
+                Intent i = new Intent(SchoolSignUpActivity.this, SearchCourseActivity.class);
                 startActivity(i);
                 finish();
             }
