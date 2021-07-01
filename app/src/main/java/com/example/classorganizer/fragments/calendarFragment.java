@@ -1,4 +1,4 @@
-package fragments;
+package com.example.classorganizer.fragments;
 
 import android.os.Bundle;
 

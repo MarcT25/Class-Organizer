@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_horizontal"
+            android:text="Let's get started!\n What courses are you taking\n right now?"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivBackDrop1"
+            android:layout_width="wrap_content"
+            android:layout_height="577dp"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="25dp"
+            app:srcCompat="@drawable/rectangle_5" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etCourseSearch1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ivBackDrop1"
+            android:layout_alignTop="@+id/ivBackDrop1"
+            android:layout_alignEnd="@+id/ivBackDrop1"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Search Courses"
+            app:boxBackgroundColor="#FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCourse1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etCourseSearch2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ivBackDrop1"
+            android:layout_alignTop="@+id/ivBackDrop1"
+            android:layout_alignEnd="@+id/ivBackDrop1"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="145dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Search Courses"
+            app:boxBackgroundColor="#FFFFFF"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCourse2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etCourseSearch3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ivBackDrop1"
+            android:layout_alignTop="@+id/ivBackDrop1"
+            android:layout_alignEnd="@+id/ivBackDrop1"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="245dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Search Courses"
+            app:boxBackgroundColor="#FFFFFF"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCourse3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etCourseSearch4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ivBackDrop1"
+            android:layout_alignTop="@+id/ivBackDrop1"
+            android:layout_alignEnd="@+id/ivBackDrop1"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="345dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Search Courses"
+            app:boxBackgroundColor="#FFFFFF"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCourse4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="620dp"
+            android:layout_marginBottom="0dp"
+            android:text="Done"
+            />
+
+
+    </RelativeLayout>
+
+</layout>
