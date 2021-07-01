@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.co">
+        <activity android:name=".ClassDetailsActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
