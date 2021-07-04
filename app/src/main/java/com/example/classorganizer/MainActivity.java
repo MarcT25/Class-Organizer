@@ -12,6 +12,7 @@ import com.example.classorganizer.fragments.homeFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.classorganizer.databinding.ActivityMainBinding;
@@ -21,6 +22,7 @@ import com.parse.ParseUser;
 
 
 public class MainActivity extends AppCompatActivity {
+    private android.widget.Button button;
 
     public static final String TAG = "MainActivity";
 
@@ -33,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
         final FragmentManager fragmentManager = getSupportFragmentManager();        //this needs to be called AFTER onCreate, not before.
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-
-       /*
-       binding.btnLogout.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               logOut();
-           }
-       }); */
+        //button for details view
+        button = (android.widget.Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openClassDetails();
+            }
+        });
 
         //listener for navigation bar, will switch to a new fragment depending on what menu item bottom is pressed, if logout is pressed it will logout the section.
         binding.nvNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -88,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
+        }
+
+        public void openClassDetails() {
+            Intent intent = new Intent(this, ClassDetailsActivity.class);
+            startActivity(intent);
+            finish();
         }
 
 
