@@ -16,18 +16,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="11dp"
         android:src="@drawable/contacts_title" />
 
     <ImageView
         android:id="@+id/ivContacts"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"
-        android:layout_marginBottom="1dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
         android:src="@drawable/contacts_box" />
 
     <EditText
@@ -36,8 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="319dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="346dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Classmate A, classmateA@gmail.com" />
@@ -48,11 +53,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="256dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="286dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Professor C, professorC@gmail.com"/>
+        android:text="Professor C, professorC@gmail.com" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -60,8 +66,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="197dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="227dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Professor B, professorB@gmail.com" />
@@ -72,8 +79,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="163dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Professor A, professorA@gmail.com" />
@@ -95,8 +103,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="385dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="408dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Advisor A, advisorA@gmail.com" />
