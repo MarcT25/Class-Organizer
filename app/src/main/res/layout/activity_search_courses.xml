@@ -132,6 +132,18 @@
             android:text="Done"
             />
 
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_alignStart="@+id/ivBackDrop1"
+            android:layout_alignTop="@+id/ivBackDrop1"
+            android:layout_alignEnd="@+id/ivBackDrop1"
+            android:layout_marginStart="311dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="34dp"
+            app:srcCompat="@drawable/searchclass" />
+
 
     </RelativeLayout>
 
