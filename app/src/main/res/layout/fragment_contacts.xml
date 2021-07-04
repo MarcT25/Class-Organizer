@@ -22,11 +22,61 @@
     <ImageView
         android:id="@+id/ivContacts"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="1dp"
         android:src="@drawable/contacts_box" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="319dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Classmate A, classmateA@gmail.com" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="256dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Professor C, professorC@gmail.com"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="197dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Professor B, professorB@gmail.com" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="140dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Professor A, professorA@gmail.com" />
 
     <ImageButton
         android:id="@+id/ibAddContact"
@@ -34,8 +84,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="177dp"
+        android:layout_marginBottom="161dp"
         android:background="@color/green"
         android:src="@drawable/add_contacts_text" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="385dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Advisor A, advisorA@gmail.com" />
 
 </RelativeLayout>
