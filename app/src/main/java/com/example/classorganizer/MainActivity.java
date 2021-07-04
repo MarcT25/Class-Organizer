@@ -35,14 +35,6 @@ public class MainActivity extends AppCompatActivity {
         final FragmentManager fragmentManager = getSupportFragmentManager();        //this needs to be called AFTER onCreate, not before.
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        //button for details view
-        button = (android.widget.Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openClassDetails();
-            }
-        });
 
         //listener for navigation bar, will switch to a new fragment depending on what menu item bottom is pressed, if logout is pressed it will logout the section.
         binding.nvNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
