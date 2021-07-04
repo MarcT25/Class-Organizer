@@ -149,7 +149,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Study Session"
+        android:text="Assignments"
         android:textColor="@color/black"
         android:textSize="45px"
         android:textStyle="bold"
@@ -209,30 +209,31 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="195dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="76dp"
-        android:backgroundTint="#7DB289"
-        android:text="Add Study Session..."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="195dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="76dp"
+            android:backgroundTint="#7DB289"
+            android:text="View More"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.552"
+            app:layout_constraintStart_toStartOf="parent" />
+<!--        app:layout_constraintStart_toEndOf="@+id/button4" />-->
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="89dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:backgroundTint="#7DB289"
-        android:text="Primary"
-        android:textSize="35px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.095" />
+<!--    <Button-->
+<!--        android:id="@+id/button4"-->
+<!--        android:layout_width="89dp"-->
+<!--        android:layout_height="49dp"-->
+<!--        android:layout_marginStart="48dp"-->
+<!--        android:backgroundTint="#7DB289"-->
+<!--        android:text="Primary"-->
+<!--        android:textSize="35px"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
+<!--        app:layout_constraintVertical_bias="0.095" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
