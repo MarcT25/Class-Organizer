@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_layout">
+
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:text="courseTitle"
+        android:id="@+id/courseTitle"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/courseAssignments"
+        android:layout_toRightOf="@+id/courseTitle"
+        android:text="content_of_assignment"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        android:layout_marginLeft="10dp"
+        />
+
+
+</RelativeLayout>
