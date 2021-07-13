@@ -119,14 +119,35 @@ public class SignUpActivity extends AppCompatActivity {
 
         String username = etUsername.getText().toString();
         String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
+
+
+
+        /*
+            REGEX EXPRESSION
+                (?=.*[0-9]) a digit must occur at least once
+                (?=.*[a-z]) a lower case letter must occur at least once
+                (?=.*[A-Z]) an upper case letter must occur at least once
+                (?!=.*[@#$%^&+=]) a special character must occur at least once
+                (?=\\S+$) no whitespace allowed in the entire string
+                .{6,} at least 6 characters
+         */
+
+        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!=\\S+$).{6,}";
+
+        Boolean checker = false;
+
+        String password= etPassword.getText().toString();
         String pdConfirm = (etConfirmPwd.getText()).toString();
+
+        if (password.matches(pattern) && pdConfirm.matches(pattern)){
+            checker = true;
+        }
 
         if (email.isEmpty()) {
             Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (password.equals(pdConfirm)) {
+        if (password.equals(pdConfirm) && checker == true) {
             // Invoke signUpInBackground
             user.signUpInBackground(new SignUpCallback() {
                 public void done(ParseException e) {

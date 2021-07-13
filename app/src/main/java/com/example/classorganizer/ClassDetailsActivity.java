@@ -24,6 +24,12 @@ public class ClassDetailsActivity extends AppCompatActivity {
                 goBackHome();
             }
         });
+        /*
+        binding.button2.setVisibility(View.GONE);
+        binding.button3.setVisibility(View.GONE);
+        binding.button4.setVisibility(View.GONE);
+
+         */
     }
 
     public void goBackHome() {
