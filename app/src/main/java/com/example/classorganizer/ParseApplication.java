@@ -15,7 +15,9 @@ public class ParseApplication extends Application {
         //ParseObject.registerSubclass(Post.class);
         //Registering User class
 
-        //ParseObject.registerSubclass(User.class);
+        ParseObject.registerSubclass(User.class);
+        ParseObject.registerSubclass(School.class);
+        ParseObject.registerSubclass(Course.class);
 
 
         Parse.initialize(new Parse.Configuration.Builder(this)

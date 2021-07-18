@@ -22,6 +22,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import org.parceler.Parcels;
+
 public class SignUpActivity extends AppCompatActivity {
     public static final String TAG = "SignUpActivity";
     private ActivitySignUpBinding binding;
@@ -97,10 +99,10 @@ public class SignUpActivity extends AppCompatActivity {
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //UserSignUp();
-                Intent i = new Intent(SignUpActivity.this, SchoolSignUpActivity.class);
-                startActivity(i);
-                finish();
+                UserSignUp();
+                //Intent i = new Intent(SignUpActivity.this, SchoolSignUpActivity.class);
+                //startActivity(i);
+                //finish();
             }
         });
 
@@ -114,12 +116,10 @@ public class SignUpActivity extends AppCompatActivity {
         user.setPassword(etPassword.getText().toString());
         user.setEmail(etEmail.getText().toString());
         user.put("firstName", etFirst.getText().toString());
-        user.put("lastName", etLast.getText().toString());
-
+        user.put("lastname", etLast.getText().toString());
 
         String username = etUsername.getText().toString();
         String email = etEmail.getText().toString();
-
 
 
         /*
@@ -176,8 +176,12 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(SignUpActivity.this, "Issue with login", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Intent i = new Intent(SignUpActivity.this, SchoolSignUpActivity.class);
+                //i.putExtra("user", Parcels.wrap(user1));
+                startActivity(i);
+                finish();
                 //Navigate to the main activity if the user has signed in properly
-                goMainActivity();
+                //goMainActivity();
             }
         });
     }
