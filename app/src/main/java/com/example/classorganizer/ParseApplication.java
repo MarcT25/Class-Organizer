@@ -17,6 +17,11 @@ public class ParseApplication extends Application {
 
         //ParseObject.registerSubclass(User.class);
 
+        //Registering Assignments Data Model as well as Contacts Data Model
+        ParseObject.registerSubclass(Assignment.class);
+        ParseObject.registerSubclass(Contact.class);
+
+
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId(BuildConfig.MYAPPID)
