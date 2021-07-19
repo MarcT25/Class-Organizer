@@ -75,12 +75,36 @@ public class ClassDetailsActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this );
         binding.recyclerView.setLayoutManager(layoutManager);
 
+        queryAssignment();
+
     }
 
     public void goBackHome() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void queryAssignment(){
+        ParseQuery<Assignment> query = ParseQuery.getQuery(Assignment.class);
+        query.include(Assignment.KEY_USER);
+        query.include(Assignment.KEY_ASSIGNMENT);
+        //query.include(Assignment.KEY_COURSE_ID);
+
+        query.findInBackground(new FindCallback<Assignment>() {
+            @Override
+            public void done(List<Assignment> objects, ParseException e) {
+                if (e!= null){
+                    Log.e(TAG,"error with fetching courses", e);
+                    return;
+                }
+                for (Assignment assignment : objects){
+                    Log.i(TAG, "ITS WORKINGS: " + assignment.getAssignment() + " " + assignment.getAuthor().getUsername());
+                }
+                allAssignments.addAll(objects);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
     
 }

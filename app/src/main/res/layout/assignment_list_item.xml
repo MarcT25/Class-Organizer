@@ -33,7 +33,7 @@
             android:layout_height="30dp"
             android:id="@+id/courseAssignments"
             android:layout_toRightOf="@+id/courseTitle"
-            android:text="test"
+            android:text="@{assignment.getAssignment()}"
             android:textColor="@color/black"
             android:textSize="19dp"
             android:layout_marginLeft="10dp"
