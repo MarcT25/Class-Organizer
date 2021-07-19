@@ -25,7 +25,7 @@ public class Assignment extends ParseObject {
     public void setObjectID(String id) {put(KEY_OBJECT_ID, id); }
 
     // Course ID
-    public String getKeyCourseIdID() { return getString(KEY_COURSE_ID); }
+    public String getKeyCourseID() { return getString(KEY_COURSE_ID); }
     public void setCourseID(String id) {put(KEY_COURSE_ID, id); }
 
     //Get Student
