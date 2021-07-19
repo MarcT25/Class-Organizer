@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/parent_layout">
+    <layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="course"
+            type="com.example.classorganizer.Course" />
+        <variable
+            name="assignment"
+            type="com.example.classorganizer.Assignment" />
+    </data>
 
-    <TextView
-        android:layout_width="110dp"
-        android:layout_height="30dp"
-        android:text="courseTitle"
-        android:id="@+id/courseTitle"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:id="@+id/courseAssignments"
-        android:layout_toRightOf="@+id/courseTitle"
-        android:text="content_of_assignment"
-        android:textColor="@color/black"
-        android:textSize="19dp"
-        android:layout_marginLeft="10dp"
-        />
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".AssignmentAdapter" >
 
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:text="test"
+            android:id="@+id/courseTitle"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/courseAssignments"
+            android:layout_toRightOf="@+id/courseTitle"
+            android:text="test"
+            android:textColor="@color/black"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"
+            />
+    </RelativeLayout>
+
+</layout>

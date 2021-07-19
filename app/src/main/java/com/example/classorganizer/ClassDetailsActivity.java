@@ -1,33 +1,33 @@
 package com.example.classorganizer;
 
-import androidx.annotation.LongDef;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import android.content.Intent;
+import android.view.LayoutInflater;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+
 
 import com.example.classorganizer.databinding.ActivityDetailsBinding;
-
-import java.lang.reflect.Array;
+import com.example.classorganizer.Course;
+import com.example.classorganizer.Assignment;
+import com.example.classorganizer.AssignmentAdapter;
+import com.example.classorganizer.R;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
-import org.parceler.Parcels;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-import java.util.ArrayList;
 
 public class ClassDetailsActivity extends AppCompatActivity {
 
@@ -36,15 +36,27 @@ public class ClassDetailsActivity extends AppCompatActivity {
     private ActivityDetailsBinding binding;
 
     //vars
-    private ArrayList<String> nameOfCourses = new ArrayList<>();
-    private ArrayList<String> nameOfAssignments = new ArrayList<>();
-    protected List<Course> allCourses;
+    protected AssignmentAdapter adapter;
+    protected List<Assignment> allAssignments;
+    //protected List<Course> allCourses;
+
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//
+//        // Inflate the layout for this
+//        return inflater.inflate(R.layout.assignment_list_item, container, false);
+//    }
+
+    //protected void onViewCreated()
 
     //BACK BUTTON
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_details);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_details);
+
 
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +65,16 @@ public class ClassDetailsActivity extends AppCompatActivity {
             }
         });
 
-        initRecyclerView();
+        //instantiate all courses to be a new 'arraylist'
+        //adapter will now be 'matched' with the assignmentAdapter to the new list
+        allAssignments = new ArrayList<>();
+        adapter = new AssignmentAdapter(this, allAssignments);
 
-        //Line 115 seems to be an issue with null object reference, I probably did something wrong.
-        queryAssignments();
-        //call the function that uses Parse server here
-        // Call initRecyclerView function inside this function that takes from Parse server
+        //we bind the adapter to the recyclerview so that things will actually show
+        binding.recyclerView.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this );
+        binding.recyclerView.setLayoutManager(layoutManager);
+
     }
 
     public void goBackHome() {
@@ -66,61 +82,5 @@ public class ClassDetailsActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
-    //Get from Parse server Assignments here into these lists.
-
-
-    //set up the actual Recycler View to appear on Assignments
-    private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        AssignmentRecycler adapter = new AssignmentRecycler(nameOfCourses, nameOfAssignments, this);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this ));
-    }
-
-    private void queryAssignments() {
-        ParseQuery<Assignment> query = ParseQuery.getQuery(Assignment.class);
-        ParseQuery<Course> courseQuery = ParseQuery.getQuery(Course.class);
-
-        query.include(Assignment.KEY_USER);
-        courseQuery.include(Course.KEY_USER);
-
-        //I borrowed this query method to get all courses into the allCourses.
-        courseQuery.findInBackground(new FindCallback<Course>() {
-            @Override
-            public void done(List<Course> objects, ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "error with fetching courses", e);
-                    return;
-                }
-                for (Course course : objects) {
-                    Log.i(TAG, "ITS WORKINGS: " + course.getKeyObjectID());
-                }
-                allCourses.addAll(objects);
-            }
-        });
-
-        query.findInBackground(new FindCallback<Assignment>() {
-            @Override
-            public void done(List<Assignment> objects, ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "error with fetching courses", e);
-                    return;
-                }
-                for (Assignment assignment : objects) {
-                    Log.i(TAG, "ITS WORKINGS: " + assignment.getAssignment());
-                    nameOfAssignments.add(assignment.getAssignment());
-
-                    //This for-loop is the lazy workaround to get the correct courseID to the Assignment's courseID.
-                    for(Course course : allCourses){
-                        if(assignment.getKeyCourseID() == course.getKeyObjectID()){
-                           nameOfCourses.add(course.getCourseName());
-                        }
-                    }
-                }
-
-            }
-        });
-    }
-
+    
 }

@@ -1,52 +1,52 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.contactsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/tvContacts_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
-        android:src="@drawable/contacts_title" />
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="contact"
+            type="com.example.classorganizer.Contact" />
+    </data>
 
-    <ImageView
-        android:id="@+id/ivContacts"
-        android:layout_width="wrap_content"
-        android:layout_height="623dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="28dp"
-        android:src="@drawable/contacts_box" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.contactsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="397dp"
-        android:layout_height="450dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="160dp"
-        />
+        <ImageView
+            android:id="@+id/tvContacts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="53dp"
+            android:src="@drawable/contacts_title" />
 
-    <!--    <ImageButton-->
-<!--        android:id="@+id/ibAddContact"-->
-<!--        android:layout_width="100dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_below="@+id/editTextTextPersonName"-->
-<!--        android:layout_alignStart="@+id/ivContacts"-->
-<!--        android:layout_alignEnd="@+id/ivContacts"-->
-<!--        android:layout_marginStart="146dp"-->
-<!--        android:layout_marginTop="133dp"-->
-<!--        android:layout_marginEnd="146dp"-->
-<!--        android:background="@color/green"-->
-<!--        android:src="@drawable/add_contacts_text" />-->
+        <ImageView
+            android:id="@+id/ivContacts"
+            android:layout_width="wrap_content"
+            android:layout_height="623dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/contacts_box" />
 
-</RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="397dp"
+            android:layout_height="450dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="160dp"
+            android:id="@+id/rvContact"
+            />
+    </RelativeLayout>
+</layout>
