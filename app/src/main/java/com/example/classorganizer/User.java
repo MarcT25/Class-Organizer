@@ -18,6 +18,7 @@ public class User extends ParseObject {
 
     public static final String KEY_IS_PROF = "isProf";
     public static final String KEY_OBJECT_ID = "objectID";
+    public static final String KEY_SCHOOL_ID = "schoolID";
 
     //--------------------Getters and Setters----------------------
 
@@ -25,6 +26,10 @@ public class User extends ParseObject {
     // Object ID (user id)
     public String getKeyObjectID() { return getString(KEY_OBJECT_ID); }
     public void setObjectID(String id) {put(KEY_OBJECT_ID, id); }
+
+    //School ID
+    //public String getKeySchoolID(){return getString(KEY_SCHOOL_ID);}
+    //public void setSchoolID(String id){put(KEY_SCHOOL_ID, id);}
 
     //First Name
     public String getFirstName(){

@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         final FragmentManager fragmentManager = getSupportFragmentManager();        //this needs to be called AFTER onCreate, not before.
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-
         /*
         ParseUser parseUser = Parcels.unwrap(getIntent().getParcelableExtra("ParseUser"));
         User user = Parcels.unwrap(getIntent().getParcelableExtra("user"));
@@ -83,11 +81,14 @@ public class MainActivity extends AppCompatActivity {
         //defaults to the homepage after logging in.
         binding.nvNavigation.setSelectedItemId(R.id.home);
 
-        //querySchool();
-        //queryuser();
+        //querySchool();;
+        queryuser();
+        //User user = Parcels.unwrap(getIntent().getParcelableExtra("user"));
 
-        //ParseUser currentUser = ParseUser.getCurrentUser();
-        //Log.i(TAG,"testing " + currentUser.getObjectId());
+        //Log.i(TAG, "first name test " + user.getFirstName());
+        //Log.i(TAG, "ID " + ParseUser.getCurrentUser().getObjectId());
+
+
 
     }
 
@@ -128,25 +129,31 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
+        */
         private void queryuser(){
-            ParseUser currentUser = ParseUser.getCurrentUser();
-            ParseQuery<User> query = ParseQuery.getQuery(User.class);
-            //query.whereEqualTo(User.KEY_OBJECT_ID, currentUser.getObjectId());
-            query.include(User.KEY_OBJECT_ID);
-            query.findInBackground(new FindCallback<User>() {
+            ParseQuery<School> query = ParseQuery.getQuery(School.class);
+
+            query.include(ParseUser.getCurrentUser().getObjectId());
+            query.findInBackground(new FindCallback<School>() {
                 @Override
-                public void done(List<User> objects, ParseException e) {
+                public void done(List<School> objects, ParseException e) {
                     if (e!=null){
                         Log.e(TAG, "issue with getting school", e);
                         return;
                     }
-                    for (User user : objects)
-                        Log.i(TAG, "School " + user.getFirstName());
+                    for (School school : objects) {
+                        Log.i(TAG, "ID from ParseUser " + ParseUser.getCurrentUser().getObjectId());
+                        Log.i(TAG, "ID from School " + school.getUser().getObjectId());
+                        Log.i(TAG, "School " + school.getSchool());
+                        //Log.i(TAG, "School obj id " + school.getObjectId());
+
+                        if ( ParseUser.getCurrentUser().getObjectId() == school.getUser().getObjectId()) {
+                            Log.i(TAG, "True");
+                        }
+                    }
                 }
             });
 
         }
 
- */
     }

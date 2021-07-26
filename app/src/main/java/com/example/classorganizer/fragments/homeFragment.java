@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.classorganizer.ClassDetailsActivity;
 import com.example.classorganizer.Course;
+import com.example.classorganizer.EditCourse;
 import com.example.classorganizer.HomeAdapter;
 import com.example.classorganizer.R;
 import com.example.classorganizer.User;
@@ -74,6 +75,14 @@ public class homeFragment extends Fragment {
             }
         });
         queryCourse();
+
+        binding.tvEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), EditCourse.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void queryCourse(){

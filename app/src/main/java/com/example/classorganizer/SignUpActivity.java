@@ -99,10 +99,10 @@ public class SignUpActivity extends AppCompatActivity {
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UserSignUp();
-                //Intent i = new Intent(SignUpActivity.this, SchoolSignUpActivity.class);
-                //startActivity(i);
-                //finish();
+                UserSignUp();/*
+                Intent i = new Intent(SignUpActivity.this, SchoolSignUpActivity.class);
+                startActivity(i);
+                finish(); */
             }
         });
 
@@ -134,14 +134,16 @@ public class SignUpActivity extends AppCompatActivity {
 
         String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!=\\S+$).{6,}";
 
-        Boolean checker = false;
+        Boolean checker = true;         //REMEMBER TO SWITCH BACK TO FALSE AFTER YOU ARE DONE TESTING
 
         String password= etPassword.getText().toString();
         String pdConfirm = (etConfirmPwd.getText()).toString();
 
+        /*
         if (password.matches(pattern) && pdConfirm.matches(pattern)){
             checker = true;
         }
+        */
 
         if (email.isEmpty()) {
             Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
@@ -184,6 +186,7 @@ public class SignUpActivity extends AppCompatActivity {
                 //goMainActivity();
             }
         });
+
     }
 
     private void goMainActivity() {

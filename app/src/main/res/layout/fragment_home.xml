@@ -27,10 +27,39 @@
         android:layout_marginTop="380dp"
         app:srcCompat="@drawable/classschedule" />
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="389dp"
+            app:srcCompat="@drawable/eventsschedule" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCourse"
+            android:layout_width="331dp"
+            android:layout_height="295dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/tvEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@android:dimen/thumbnail_height"
+            android:layout_marginTop="352dp"
+
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Edit" />
+
+
+        <!--<androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCourse"
             android:layout_width="match_parent"
-            android:layout_height="368dp" />
+            android:layout_height="285dp" />
+            -->
+
+
         <!--
             <ImageView
                 android:id="@+id/imageView4"

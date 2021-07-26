@@ -29,6 +29,7 @@ public class School extends ParseObject {
     public String getSchool(){
         return getString(KEY_SCHOOL);
     }
+    public void setSchool(String id){ put(KEY_SCHOOL,id);}
 
 
 

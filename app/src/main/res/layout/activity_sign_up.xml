@@ -27,6 +27,7 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -40,19 +41,20 @@
                         android:id="@+id/llTop"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_marginStart="50dp"
-                        android:layout_marginEnd="50dp" >
+                        android:layout_marginEnd="50dp"
+                        android:orientation="vertical">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/etFirstLayout"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_alignParentStart="true"
                                 android:layout_width="143dp"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
                                 android:hint="First name">
 
                                 <com.google.android.material.textfield.TextInputEditText
@@ -64,9 +66,9 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/etLastLayout"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_alignParentEnd="true"
                                 android:layout_width="143dp"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:hint="Last name">
 
                                 <com.google.android.material.textfield.TextInputEditText
@@ -102,7 +104,7 @@
                                 android:id="@+id/etEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"/>
+                                android:inputType="textEmailAddress" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -115,10 +117,10 @@
                             app:endIconMode="password_toggle">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/etPassword"
-                                android:inputType="textPassword"/>
+                                android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -131,10 +133,10 @@
                             app:endIconMode="password_toggle">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etConfirmPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/etConfirmPassword"
-                                android:inputType="textPassword"/>
+                                android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -151,18 +153,17 @@
                         android:id="@+id/rlUser"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/backdrop"
-                        >
+                        android:background="@drawable/backdrop">
+
                         <Button
                             android:id="@+id/btnUserSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="50dp"
-                            android:layout_marginEnd="50dp"
                             android:layout_marginTop="50dp"
+                            android:layout_marginEnd="50dp"
                             android:layout_marginBottom="188dp"
-                            android:text="User Sign Up"
-                            />
+                            android:text="User Sign Up" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -211,12 +212,13 @@
                                     android:inputType="phone"
                                     android:maxLength="11" />
                             </com.google.android.material.textfield.TextInputLayout>
+
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/etCompanyLayout"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                android:layout_below="@+id/etPhoneLayout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_below="@+id/etPhoneLayout"
                                 android:layout_marginTop="10dp"
                                 android:hint="Company"
                                 app:boxBackgroundColor="@color/white">
@@ -292,7 +294,7 @@
                                     android:layout_width="93dp"
                                     android:layout_height="wrap_content"
                                     android:inputType="textCapCharacters"
-                                    android:maxLength="2"/>
+                                    android:maxLength="2" />
                             </com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputLayout
@@ -311,23 +313,23 @@
                                     android:layout_width="93dp"
                                     android:layout_height="wrap_content"
                                     android:inputType="number"
-                                    android:maxLength="6"/>
+                                    android:maxLength="6" />
                             </com.google.android.material.textfield.TextInputLayout>
 
                             <Button
                                 android:id="@+id/btnProfSignUp"
-                                android:layout_below="@+id/etZipcodeLayout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="50dp"
+                                android:layout_below="@+id/etZipcodeLayout"
                                 android:layout_marginTop="50dp"
-                                android:text="Professor Sign Up"
-                                />
+                                android:layout_marginBottom="50dp"
+                                android:text="Professor Sign Up" />
                         </RelativeLayout>
                     </RelativeLayout>
                 </LinearLayout>
 
             </androidx.core.widget.NestedScrollView>
+
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </RelativeLayout>
 

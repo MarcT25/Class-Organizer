@@ -1,14 +1,20 @@
 package com.example.classorganizer;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classorganizer.databinding.ItemHomeBinding;
+import com.parse.ParseUser;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -20,8 +26,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private Context context;
     private List<Course> courses;
-    //private List<User> users;
-
 
     public HomeAdapter(Context context, List<Course> courses){
         this.context = context;
@@ -41,7 +45,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         Course course = courses.get(position);
         holder.binding.setCourse(course);
 
+        //  ITS WORKING
         User user = new User();
+        ParseUser parseUser = course.getAuthor();
+
+        user.setObjectID(ParseUser.getCurrentUser().getObjectId());
+        user.setFirstName(parseUser.getString(User.KEY_FIRST_NAME));
+        user.setLastName(parseUser.getString(User.KEY_LAST_NAME));
+        //Log.i(TAG,"first name test "+ user.getFirstName());
+
+        Toast.makeText(context,"Welcome " + user.getFirstName() + " " + user.getLastName() + "!", Toast.LENGTH_SHORT).show();
+
+        //Intent i = new Intent(context, MainActivity.class);
+        //i.putExtra("user", Parcels.wrap(user));
 
         holder.binding.setUser(user);
     }
