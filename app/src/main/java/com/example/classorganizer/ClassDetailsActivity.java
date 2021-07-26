@@ -38,17 +38,8 @@ public class ClassDetailsActivity extends AppCompatActivity {
     //vars
     protected AssignmentAdapter adapter;
     protected List<Assignment> allAssignments;
-    //protected List<Course> allCourses;
 
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//
-//        // Inflate the layout for this
-//        return inflater.inflate(R.layout.assignment_list_item, container, false);
-//    }
 
-    //protected void onViewCreated()
 
     //BACK BUTTON
     @Override
@@ -62,6 +53,13 @@ public class ClassDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goBackHome();
+            }
+        });
+
+        binding.addAssignment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goAddAssignment();
             }
         });
 
@@ -81,6 +79,12 @@ public class ClassDetailsActivity extends AppCompatActivity {
 
     public void goBackHome() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void goAddAssignment(){
+        Intent intent = new Intent(ClassDetailsActivity.this, AssignmentAdder.class);
         startActivity(intent);
         finish();
     }
@@ -106,5 +110,5 @@ public class ClassDetailsActivity extends AppCompatActivity {
             }
         });
     }
-    
+
 }
