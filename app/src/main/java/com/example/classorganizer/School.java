@@ -31,6 +31,4 @@ public class School extends ParseObject {
     }
     public void setSchool(String id){ put(KEY_SCHOOL,id);}
 
-
-
 }

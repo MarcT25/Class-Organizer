@@ -28,10 +28,9 @@
             android:layout_marginStart="102dp"
             android:layout_marginTop="34dp"
             android:hint="test"
-            android:text="@{course.getCourseName()}"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <!--
         <ImageView

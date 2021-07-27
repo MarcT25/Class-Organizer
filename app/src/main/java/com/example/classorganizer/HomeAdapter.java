@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classorganizer.databinding.ItemHomeBinding;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import org.parceler.Parcels;
@@ -30,7 +31,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public HomeAdapter(Context context, List<Course> courses){
         this.context = context;
         this.courses = courses;
-        //this.users = users;
     }
 
     @NonNull
@@ -47,19 +47,51 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
         //  ITS WORKING
         User user = new User();
+        School school = new School();
         ParseUser parseUser = course.getAuthor();
+
+        //school.setObjectId(ParseUser.getCurrentUser().getObjectId());
+
+        //school.setSchool(parseUser.getString(School.KEY_SCHOOL));
+
+
+        //THIS WILL GET THE OBJECTID FROM COURSE
+        //school.setObjectId(course.getObjectId());
+        //Log.i(TAG,"School test "+ school.getObjectId());
+
+        //Log.i(TAG,"Course test "+ course.getAuthor().getObjectId());
+
+
+        //Log.i(TAG,"School test "+ school.getSchool());
 
         user.setObjectID(ParseUser.getCurrentUser().getObjectId());
         user.setFirstName(parseUser.getString(User.KEY_FIRST_NAME));
         user.setLastName(parseUser.getString(User.KEY_LAST_NAME));
-        //Log.i(TAG,"first name test "+ user.getFirstName());
+        //user.setSchoolID(parseUser.getString(User.KEY_SCHOOL_ID));
+        Log.i(TAG,"User ID test "+ user.getKeyObjectID());
+
+
+        //THIS WILL GET THE SCHOOLID FROM COURSE
+        ParseObject testschool = course.getParseObject("SchoolID");
+        Log.i(TAG,"Course to school pointer test "+ testschool.getObjectId());
+
 
         Toast.makeText(context,"Welcome " + user.getFirstName() + " " + user.getLastName() + "!", Toast.LENGTH_SHORT).show();
+
 
         //Intent i = new Intent(context, MainActivity.class);
         //i.putExtra("user", Parcels.wrap(user));
 
         holder.binding.setUser(user);
+
+        //COMPARISON, THIS WILL ONLY RETURN THE COURSES LINKED TO THE USER ID
+        String userKey = user.getKeyObjectID();
+        String courseKey = course.getAuthor().getObjectId();
+        Log.i(TAG, "userKey " + userKey + " courseKey " + courseKey);
+        if (userKey.equals(courseKey)){
+            binding.tvCourse.setText(course.getCourseName());
+        }
+
     }
 
     @Override
