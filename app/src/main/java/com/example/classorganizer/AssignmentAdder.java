@@ -60,7 +60,8 @@ public class AssignmentAdder extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //call query button here to submit
-                //saveAssignment(editAssignment, editCourse);
+                Log.d(TAG, "onClick: " + editAssignment.getEditText().getText().toString());
+                saveAssignment(editAssignment.getEditText().getText().toString(), editCourse.getEditText().getText().toString());
                 Intent j = new Intent(AssignmentAdder.this, ClassDetailsActivity.class);
                 startActivity(j);
                 finish();
@@ -68,7 +69,7 @@ public class AssignmentAdder extends AppCompatActivity {
         });
 
     }
-
+    //Saves Assignment but crashes!
     private void saveAssignment(String assignment, String course
                                 //,ParseUser currentUser
     ){
