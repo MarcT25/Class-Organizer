@@ -37,6 +37,8 @@ public class AssignmentAdder extends AppCompatActivity {
     private TextInputLayout editCourse;
     private TextInputLayout editAssignment;
 
+    ParseUser user = ParseUser.getCurrentUser();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +63,11 @@ public class AssignmentAdder extends AppCompatActivity {
             public void onClick(View v) {
                 //call query button here to submit
                 Log.d(TAG, "onClick: " + editAssignment.getEditText().getText().toString());
-                saveAssignment(editAssignment.getEditText().getText().toString(), editCourse.getEditText().getText().toString());
+
+                saveAssignment(editAssignment.getEditText().getText().toString(),
+                        editCourse.getEditText().getText().toString(),
+                        user
+                );
                 Intent j = new Intent(AssignmentAdder.this, ClassDetailsActivity.class);
                 startActivity(j);
                 finish();
@@ -70,14 +76,18 @@ public class AssignmentAdder extends AppCompatActivity {
 
     }
     //Saves Assignment but crashes!
-    private void saveAssignment(String assignment, String course
-                                //,ParseUser currentUser
+    private void saveAssignment(String assignment,
+                                String course,
+                                ParseUser currentUser
     ){
         //using value inside
-
         Assignment whichAssignment = new Assignment();
         whichAssignment.setAssignment(assignment);
-        //whichAssignment.setUser(currentUser);
+        whichAssignment.setAuthor(currentUser);
+
+        //before save in background here, I must query through courses
+        // to find the right CourseID to save!
+
         whichAssignment.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
