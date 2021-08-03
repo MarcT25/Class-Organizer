@@ -7,9 +7,6 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="course"
-            type="com.example.classorganizer.Course" />
-        <variable
             name="assignment"
             type="com.example.classorganizer.Assignment" />
     </data>
@@ -21,18 +18,9 @@
         tools:context=".AssignmentAdapter" >
 
         <TextView
-            android:layout_width="110dp"
-            android:layout_height="30dp"
-            android:text="test"
-            android:id="@+id/courseTitle"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:id="@+id/courseAssignments"
-            android:layout_toRightOf="@+id/courseTitle"
             android:text="@{assignment.getAssignment()}"
             android:textColor="@color/black"
             android:textSize="19dp"

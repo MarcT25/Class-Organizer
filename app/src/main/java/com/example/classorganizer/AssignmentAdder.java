@@ -2,6 +2,7 @@ package com.example.classorganizer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.security.identity.IdentityCredential;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -34,7 +36,6 @@ public class AssignmentAdder extends AppCompatActivity {
     private ActivityAddAssignmentBinding binding;
 
     private Button btnSubmitAssignment;
-    private TextInputLayout editCourse;
     private TextInputLayout editAssignment;
 
     ParseUser user = ParseUser.getCurrentUser();
@@ -45,7 +46,6 @@ public class AssignmentAdder extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_assignment);
 
         editAssignment = binding.etAssignment;
-        editCourse = binding.etCourse;
         btnSubmitAssignment = binding.btnSubmit;
 
         //back button
@@ -65,7 +65,6 @@ public class AssignmentAdder extends AppCompatActivity {
                 Log.d(TAG, "onClick: " + editAssignment.getEditText().getText().toString());
 
                 saveAssignment(editAssignment.getEditText().getText().toString(),
-                        editCourse.getEditText().getText().toString(),
                         user
                 );
                 Intent j = new Intent(AssignmentAdder.this, ClassDetailsActivity.class);
@@ -77,7 +76,6 @@ public class AssignmentAdder extends AppCompatActivity {
     }
     //Saves Assignment but crashes!
     private void saveAssignment(String assignment,
-                                String course,
                                 ParseUser currentUser
     ){
         //using value inside
@@ -87,6 +85,7 @@ public class AssignmentAdder extends AppCompatActivity {
 
         //before save in background here, I must query through courses
         // to find the right CourseID to save!
+        //String courseID = findCourseId(course);
 
         whichAssignment.saveInBackground(new SaveCallback() {
             @Override
@@ -96,9 +95,34 @@ public class AssignmentAdder extends AppCompatActivity {
                     Toast.makeText(AssignmentAdder.this, "Error with saving", Toast.LENGTH_SHORT).show();
                 }
                 Log.i(TAG, "Save successful!");
+                Toast toast = Toast.makeText(AssignmentAdder.this, "Saved!",Toast.LENGTH_LONG);
+                toast.show();
             }
         });
-
     }
 
+//    private String findCourseId(String course) {
+//        ParseQuery<Course> query = ParseQuery.getQuery(Course.class);
+//        query.include(Course.KEY_COURSE);
+//        query.include(Course.KEY_OBJECT_ID);
+//        query.whereEqualTo("Course", course);
+//        final String[] result = new String[1];
+//
+//        //query find in background here...
+//        query.findInBackground(new FindCallback<Course>() {
+//            @Override
+//            public void done(List<Course> object, com.parse.ParseException e) {
+//                if (e == null) {
+//                    Log.d(TAG, "Retrieved " + object.size() + " courses");
+//
+//                } else {
+//                    Log.d(TAG, "Error: " + e.getMessage());
+//                }
+//            }
+//        });
+//
+//        return result[0];
+//    }
+
 }
+

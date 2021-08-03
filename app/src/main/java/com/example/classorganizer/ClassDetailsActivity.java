@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 
 
 import com.example.classorganizer.databinding.ActivityDetailsBinding;
-import com.example.classorganizer.Course;
 import com.example.classorganizer.Assignment;
 import com.example.classorganizer.AssignmentAdapter;
 import com.example.classorganizer.R;
