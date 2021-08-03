@@ -33,91 +33,56 @@
             app:srcCompat="@drawable/rectangle_5" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etCourseSearch1"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/menu1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ivBackDrop1"
-            android:layout_alignTop="@+id/ivBackDrop1"
-            android:layout_alignEnd="@+id/ivBackDrop1"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="24dp"
-            android:hint="Search Courses"
-            app:boxBackgroundColor="#FFFFFF">
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Select Course">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCourse1"
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etCourseSearch2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ivBackDrop1"
-            android:layout_alignTop="@+id/ivBackDrop1"
-            android:layout_alignEnd="@+id/ivBackDrop1"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="145dp"
-            android:layout_marginEnd="24dp"
-            android:hint="Search Courses"
-            app:boxBackgroundColor="#FFFFFF"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCourse2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etCourseSearch3"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/menu2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ivBackDrop1"
-            android:layout_alignTop="@+id/ivBackDrop1"
-            android:layout_alignEnd="@+id/ivBackDrop1"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="245dp"
-            android:layout_marginEnd="24dp"
-            android:hint="Search Courses"
-            app:boxBackgroundColor="#FFFFFF"
-            >
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Select Course">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCourse3"
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etCourseSearch4"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/menu3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ivBackDrop1"
-            android:layout_alignTop="@+id/ivBackDrop1"
-            android:layout_alignEnd="@+id/ivBackDrop1"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="345dp"
-            android:layout_marginEnd="24dp"
-            android:hint="Search Courses"
-            app:boxBackgroundColor="#FFFFFF"
-            >
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="390dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Select Course">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCourse4"
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,18 +96,6 @@
             android:layout_marginBottom="0dp"
             android:text="Done"
             />
-
-        <ImageView
-            android:id="@+id/ivSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="41dp"
-            android:layout_alignStart="@+id/ivBackDrop1"
-            android:layout_alignTop="@+id/ivBackDrop1"
-            android:layout_alignEnd="@+id/ivBackDrop1"
-            android:layout_marginStart="311dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginEnd="34dp"
-            app:srcCompat="@drawable/searchclass" />
 
 
     </RelativeLayout>
