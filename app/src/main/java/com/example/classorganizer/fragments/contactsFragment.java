@@ -1,16 +1,31 @@
 package com.example.classorganizer.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.classorganizer.MainActivity;
+import com.example.classorganizer.Contact;
+import com.example.classorganizer.ContactAdapter;
+import com.example.classorganizer.Course;
 import com.example.classorganizer.R;
+import com.example.classorganizer.databinding.FragmentContactsBinding;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +33,12 @@ import com.example.classorganizer.R;
  * create an instance of this fragment.
  */
 public class contactsFragment extends Fragment {
+
+    public static final String TAG = "contactsFragment";
+
+    protected ContactAdapter adapter;
+    protected List<Contact> allContacts;
+    private FragmentContactsBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,5 +85,48 @@ public class contactsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_contacts, container, false);
+    }
+
+    // -------------------------------
+
+    @Override
+    public void onViewCreated(@NonNull View view,@Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding = binding.bind(view);
+
+
+        //instantiate all courses to be a new 'arraylist'
+        //adapter will now be 'matched' with the homeadapter to the new list
+        allContacts = new ArrayList<>();
+        adapter = new ContactAdapter(getContext(), allContacts);
+
+        //we bind the adapter to the recyclerview so that things will actually show
+        binding.rvContact.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        binding.rvContact.setLayoutManager(layoutManager);
+
+        queryContacts();
+    }
+
+    private void queryContacts(){
+        ParseQuery<Contact> query = ParseQuery.getQuery(Contact.class);
+        query.include(Contact.KEY_NAME);
+        query.include(Contact.KEY_EMAIL);
+        //query.include(User.KEY_FIRST_NAME);
+
+        query.findInBackground(new FindCallback<Contact>() {
+            @Override
+            public void done(List<Contact> objects, ParseException e) {
+                if (e!= null){
+                    Log.e(TAG,"error with fetching courses", e);
+                    return;
+                }
+                for (Contact contact : objects){
+                    Log.i(TAG, "ITS WORKINGS: " + contact.getContactName() + " " + contact.getEmail());
+                }
+                allContacts.addAll(objects);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 }
