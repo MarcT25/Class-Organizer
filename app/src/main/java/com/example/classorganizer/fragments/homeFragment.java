@@ -54,7 +54,6 @@ public class homeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = binding.bind(view);
 
-
         //instantiate all courses to be a new 'arraylist'
         //adapter will now be 'matched' with the homeadapter to the new list
         allCourses = new ArrayList<>();
