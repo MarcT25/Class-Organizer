@@ -20,59 +20,157 @@
             android:text="            Add New Event"
             android:textSize="34sp" />
 
-
-        <EditText
-            android:id="@+id/editTextTextPersonName8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Event Name" />
-
-        <EditText
-            android:id="@+id/etdate"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="Start Date"
-            android:textSize="32sp" />
-        <EditText
-            android:id="@+id/etdate1"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="End Date"
-            android:textSize="32sp" />
-
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEventName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvtimer1"
-            android:hint="Start Time"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:drawablePadding="16dp"
-            android:background="@android:drawable/editbox_background"/>
-        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Event Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEventNameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEventDate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvtimer2"
-            android:hint="End Time"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:drawablePadding="16dp"
-            android:background="@android:drawable/editbox_background"/>
-        <EditText
-            android:id="@+id/editTextTextPersonName1"
-            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="200dp"
+            android:hint="Start Date">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEventDate2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Duration" />
+            android:layout_centerVertical="true"
+            android:layout_marginTop="-60dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="40dp"
+            android:hint="End Date">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEventTime"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="200dp"
+            android:hint="Start Time">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvTimer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEventTime2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="-60dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="40dp"
+            android:hint="End Time">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvTimer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+
+        <!--        <EditText
+                    android:id="@+id/editTextTextPersonName8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="32dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Event Name" />
+
+                <EditText
+                    android:id="@+id/etdate"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Start Date"
+                    android:textSize="32sp" />
+                <EditText
+                    android:id="@+id/etdate1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="End Date"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvtimer1"
+                    android:hint="Start Time"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:drawablePadding="16dp"
+                    android:background="@android:drawable/editbox_background"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvtimer2"
+                    android:hint="End Time"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:drawablePadding="16dp"
+                    android:background="@android:drawable/editbox_background"/>
+                <EditText
+                    android:id="@+id/editTextTextPersonName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="32dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Duration" />-->
 
 
 

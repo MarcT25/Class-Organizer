@@ -27,7 +27,6 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="102dp"
             android:layout_marginTop="34dp"
-            android:hint="test"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -44,7 +43,7 @@
             app:srcCompat="@drawable/backdrop" />
             -->
 
-        <TextView
+<!--       <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +51,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="21dp"
             android:layout_marginTop="26dp"
-            android:text="@{course.getCourseName()}" />
+            android:text="@{course.getCourseName()}" />-->
 
 
     </RelativeLayout>

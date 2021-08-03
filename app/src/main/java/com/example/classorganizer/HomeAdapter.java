@@ -68,6 +68,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         user.setFirstName(parseUser.getString(User.KEY_FIRST_NAME));
         user.setLastName(parseUser.getString(User.KEY_LAST_NAME));
         //user.setSchoolID(parseUser.getString(User.KEY_SCHOOL_ID));
+        //Log.i(TAG, "testing id " + ParseUser.getCurrentUser().getObjectId());
+
         Log.i(TAG,"User ID test "+ user.getKeyObjectID());
 
 
@@ -75,9 +77,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         ParseObject testschool = course.getParseObject("SchoolID");
         Log.i(TAG,"Course to school pointer test "+ testschool.getObjectId());
 
-
         Toast.makeText(context,"Welcome " + user.getFirstName() + " " + user.getLastName() + "!", Toast.LENGTH_SHORT).show();
-
 
         //Intent i = new Intent(context, MainActivity.class);
         //i.putExtra("user", Parcels.wrap(user));

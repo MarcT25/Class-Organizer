@@ -7,6 +7,7 @@ import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -27,7 +28,7 @@ public class EditCourse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_edit_course);
 
-        binding.tvtimer1.setOnClickListener(new View.OnClickListener() {
+        binding.tvTimer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TimePickerDialog timePickerDialog = new TimePickerDialog(
@@ -39,7 +40,7 @@ public class EditCourse extends AppCompatActivity {
                                 t1Minute = minute;
                                 Calendar calendar = Calendar.getInstance();
                                 calendar.set(0, 0, 0, t1Hour, t1Minute);
-                                binding.tvtimer1.setText(DateFormat.format("hh:mm:aa", calendar));
+                                binding.tvTimer1.setText(DateFormat.format("hh:mm:aa", calendar));
 
                             }
                         }, 12, 0, false
@@ -50,9 +51,10 @@ public class EditCourse extends AppCompatActivity {
         });
 
 
-        binding.tvtimer2.setOnClickListener(new View.OnClickListener() {
+        binding.tvTimer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Toast.makeText(EditCourse.this,"On Click!",Toast.LENGTH_SHORT).show();
                 TimePickerDialog timePickerDialog = new TimePickerDialog(
                         EditCourse.this,
                         new TimePickerDialog.OnTimeSetListener() {
@@ -62,7 +64,7 @@ public class EditCourse extends AppCompatActivity {
                                 t1Minute = minute;
                                 Calendar calendar = Calendar.getInstance();
                                 calendar.set(0, 0, 0, t1Hour, t1Minute);
-                                binding.tvtimer2.setText(DateFormat.format("hh:mm:aa", calendar));
+                                binding.tvTimer2.setText(DateFormat.format("hh:mm:aa", calendar));
 
                             }
                         }, 12, 0, false
@@ -79,7 +81,7 @@ public class EditCourse extends AppCompatActivity {
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
-        binding.etdate.setOnClickListener(new View.OnClickListener() {
+        binding.etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -88,13 +90,13 @@ public class EditCourse extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
                         String date = day + "/" + month + "/" + year;
-                        binding.etdate.setText(date);
+                        binding.etDate.setText(date);
                     }
                 }, year, month, day);
                 datePickerDialog.show();
             }
         });
-        binding.etdate1.setOnClickListener(new View.OnClickListener() {
+        binding.etDate1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -103,7 +105,7 @@ public class EditCourse extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
                         String date = day + "/" + month + "/" + year;
-                        binding.etdate1.setText(date);
+                        binding.etDate1.setText(date);
                     }
                 }, year, month, day);
                 datePickerDialog.show();
