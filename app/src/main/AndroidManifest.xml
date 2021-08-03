@@ -14,6 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.co">
         <activity android:name=".ClassDetailsActivity"></activity>
+        <activity android:name=".AssignmentAdder"></activity>
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

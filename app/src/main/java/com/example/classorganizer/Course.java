@@ -35,6 +35,4 @@ public class Course extends ParseObject {
     public void setCourseName(String courseName){
         put(KEY_COURSE,courseName);
     }
-
-
 }
