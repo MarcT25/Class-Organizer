@@ -2,6 +2,7 @@ package com.example.classorganizer;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.classorganizer.databinding.ActivityEditCourseBinding;
+import com.example.classorganizer.fragments.calendarFragment;
 
 import java.util.Calendar;
 
@@ -111,6 +113,17 @@ public class EditCourse extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+        binding.btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //add to the Event Class
+                Intent i = new Intent(EditCourse.this, calendarFragment.class);
+                finish();
+            }
+        });
     }
+
+
 
 }

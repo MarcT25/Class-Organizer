@@ -13,12 +13,13 @@
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="wrap_content"
+            android:layout_width="382dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
-            android:text="            Add New Event"
-            android:textSize="34sp" />
+            android:layout_marginTop="50dp"
+            android:text="Add New Event"
+            android:textSize="34sp"
+            android:textAlignment="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etEventName"

@@ -3,14 +3,18 @@ package com.example.classorganizer.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.example.classorganizer.MainActivity;
+import com.example.classorganizer.EditCourse;
 import com.example.classorganizer.R;
+import com.example.classorganizer.databinding.FragmentCalendarBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +28,8 @@ public class calendarFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private FragmentCalendarBinding binding;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -32,15 +38,6 @@ public class calendarFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment calendarFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static calendarFragment newInstance(String param1, String param2) {
         calendarFragment fragment = new calendarFragment();
         Bundle args = new Bundle();
@@ -57,6 +54,7 @@ public class calendarFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -67,4 +65,22 @@ public class calendarFragment extends Fragment {
         //startActivity(i);
         return inflater.inflate(R.layout.fragment_calendar, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding = FragmentCalendarBinding.bind(view);
+
+        binding.btnAdd1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), EditCourse.class);
+                startActivity(i);
+            }
+        });
+    }
+
+
+
+
 }

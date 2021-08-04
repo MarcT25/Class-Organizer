@@ -1,16 +1,195 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="fragments.calendarFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <CalendarView
-        android:layout_width="410dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="150dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </CalendarView>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:text="Mon"
+            android:id="@+id/monday"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="150dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:id="@+id/tuesday"
+            android:text="Tues"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="280dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:gravity="center"
+            android:id="@+id/wednesday"
+            android:text="Wed"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMonday"
+            android:layout_width="145dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/monday"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="--" />
+
+        <TextView
+            android:id="@+id/tvTuesday"
+            android:layout_width="130dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/tuesday"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/tvMonday"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="--" />
+
+        <TextView
+            android:id="@+id/tvWednesday"
+            android:layout_width="145dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/wednesday"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="284dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="7dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="--" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="177dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="180dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_purple"
+            android:gravity="center"
+            android:text="Thurs"
+            android:id="@+id/thursday"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="150dp"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:id="@+id/friday"
+            android:text="Fri"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="280dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:id="@+id/saturday"
+            android:text="Sat"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThursday"
+            android:layout_width="145dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/monday"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="180dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="--" />
+
+        <TextView
+            android:id="@+id/tvFriday"
+            android:layout_width="130dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/tuesday"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="180dp"
+            android:layout_toEndOf="@+id/tvMonday"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="--" />
+
+        <TextView
+            android:id="@+id/tvSaturday"
+            android:layout_width="145dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/wednesday"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="284dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="7dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="--" />
+
+        <Button
+            android:id="@+id/btnAdd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Event"
+            android:layout_marginTop="400dp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+<!--    <CalendarView-->
+<!--        android:layout_width="410dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:layout_marginTop="150dp">-->
+
+<!--    </CalendarView>-->
 
 <!--    <Button-->
 <!--        android:id="@+id/button2"-->
@@ -22,4 +201,4 @@
 <!--        android:text="Add Events" />-->
 
 
-</RelativeLayout>
+</layout>
