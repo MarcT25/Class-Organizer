@@ -74,7 +74,7 @@ public class AssignmentAdder extends AppCompatActivity {
         });
 
     }
-    //Saves Assignment but crashes!
+
     private void saveAssignment(String assignment,
                                 ParseUser currentUser
     ){
@@ -82,10 +82,6 @@ public class AssignmentAdder extends AppCompatActivity {
         Assignment whichAssignment = new Assignment();
         whichAssignment.setAssignment(assignment);
         whichAssignment.setAuthor(currentUser);
-
-        //before save in background here, I must query through courses
-        // to find the right CourseID to save!
-        //String courseID = findCourseId(course);
 
         whichAssignment.saveInBackground(new SaveCallback() {
             @Override
@@ -100,29 +96,6 @@ public class AssignmentAdder extends AppCompatActivity {
             }
         });
     }
-
-//    private String findCourseId(String course) {
-//        ParseQuery<Course> query = ParseQuery.getQuery(Course.class);
-//        query.include(Course.KEY_COURSE);
-//        query.include(Course.KEY_OBJECT_ID);
-//        query.whereEqualTo("Course", course);
-//        final String[] result = new String[1];
-//
-//        //query find in background here...
-//        query.findInBackground(new FindCallback<Course>() {
-//            @Override
-//            public void done(List<Course> object, com.parse.ParseException e) {
-//                if (e == null) {
-//                    Log.d(TAG, "Retrieved " + object.size() + " courses");
-//
-//                } else {
-//                    Log.d(TAG, "Error: " + e.getMessage());
-//                }
-//            }
-//        });
-//
-//        return result[0];
-//    }
-
 }
+
 

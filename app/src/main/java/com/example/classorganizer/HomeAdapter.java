@@ -51,20 +51,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         School school = new School();
         ParseUser parseUser = course.getAuthor();
 
-        //school.setObjectId(ParseUser.getCurrentUser().getObjectId());
-
-        //school.setSchool(parseUser.getString(School.KEY_SCHOOL));
-
-
-        //THIS WILL GET THE OBJECTID FROM COURSE
-        //school.setObjectId(course.getObjectId());
-        //Log.i(TAG,"School test "+ school.getObjectId());
-
-        //Log.i(TAG,"Course test "+ course.getAuthor().getObjectId());
-
-
-        //Log.i(TAG,"School test "+ school.getSchool());
-
         user.setObjectID(ParseUser.getCurrentUser().getObjectId());
         user.setFirstName(parseUser.getString(User.KEY_FIRST_NAME));
         user.setLastName(parseUser.getString(User.KEY_LAST_NAME));
