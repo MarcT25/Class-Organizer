@@ -91,9 +91,6 @@ public class EditCourse extends AppCompatActivity {
                 saveEvent(event.getText().toString(), date1.getText().toString(), date2.getText().toString(),
                         user
                 );
-
-
-
                 Intent i = new Intent(EditCourse.this, calendarFragment.class);
                 finish();
             }
