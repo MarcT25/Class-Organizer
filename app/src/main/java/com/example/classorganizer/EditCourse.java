@@ -30,53 +30,6 @@ public class EditCourse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_edit_course);
 
-        binding.tvTimer1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(
-                        EditCourse.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                t1Hour = hourOfDay;
-                                t1Minute = minute;
-                                Calendar calendar = Calendar.getInstance();
-                                calendar.set(0, 0, 0, t1Hour, t1Minute);
-                                binding.tvTimer1.setText(DateFormat.format("hh:mm:aa", calendar));
-
-                            }
-                        }, 12, 0, false
-                );
-                timePickerDialog.updateTime(t1Hour, t1Minute);
-                timePickerDialog.show();
-            }
-        });
-
-
-        binding.tvTimer2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(EditCourse.this,"On Click!",Toast.LENGTH_SHORT).show();
-                TimePickerDialog timePickerDialog = new TimePickerDialog(
-                        EditCourse.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                t1Hour = hourOfDay;
-                                t1Minute = minute;
-                                Calendar calendar = Calendar.getInstance();
-                                calendar.set(0, 0, 0, t1Hour, t1Minute);
-                                binding.tvTimer2.setText(DateFormat.format("hh:mm:aa", calendar));
-
-                            }
-                        }, 12, 0, false
-                );
-                timePickerDialog.updateTime(t1Hour, t1Minute);
-                timePickerDialog.show();
-            }
-        });
-
-
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
@@ -118,6 +71,10 @@ public class EditCourse extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //add to the Event Class
+
+
+
+
                 Intent i = new Intent(EditCourse.this, calendarFragment.class);
                 finish();
             }

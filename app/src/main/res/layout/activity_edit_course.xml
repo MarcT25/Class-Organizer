@@ -75,44 +75,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etEventTime"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="200dp"
-            android:hint="Start Time">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvTimer1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etEventTime2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="-60dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginEnd="40dp"
-            android:hint="End Time">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvTimer2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="match_parent"
