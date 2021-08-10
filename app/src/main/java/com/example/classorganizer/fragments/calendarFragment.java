@@ -25,15 +25,16 @@ import java.util.List;
 
 public class calendarFragment extends Fragment {
 
+    public static final String TAG = "calendarFragment";
+
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private FragmentCalendarBinding binding;
-
     //vars
     protected EventAdapter adapter;
     protected List<Event> allEvents;
+    private FragmentCalendarBinding binding;
 
     private String mParam1;
     private String mParam2;
@@ -73,16 +74,16 @@ public class calendarFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding = FragmentCalendarBinding.bind(view);
+        binding = binding.bind(view);
 
         //instantiate all courses to be a new 'arraylist'
         //adapter will now be 'matched' with the assignmentAdapter to the new list
         allEvents = new ArrayList<>();
-        adapter = new EventAdapter(this.getContext(), allEvents);
+        adapter = new EventAdapter(getContext(), allEvents);
 
         //we bind the adapter to the recyclerview so that things will actually show
         binding.recyclerView.setAdapter(adapter);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext() );
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext() );
         binding.recyclerView.setLayoutManager(layoutManager);
 
         binding.btnAdd1.setOnClickListener(new View.OnClickListener() {
