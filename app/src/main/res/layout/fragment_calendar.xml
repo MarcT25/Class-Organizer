@@ -2,21 +2,42 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.calendarFragment">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".fragments.calendarFragment">
 
-        <View
-            android:id="@+id/divider"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp"
+            android:layout_marginBottom="190dp"/>
+
+        <TextView
+            android:id="@+id/sampleEvent"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
             android:layout_marginTop="70dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Name                           Start                End"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/example"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Job Fair                        18/7/21                19/7/21"
+            android:textColor="@color/black"
+            android:textSize="15dp"/>
+
 
         <TextView
             android:id="@+id/eventTitle"
@@ -30,14 +51,6 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="20dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="190dp"/>
-
         <Button
             android:id="@+id/btnAdd1"
             android:layout_width="wrap_content"
