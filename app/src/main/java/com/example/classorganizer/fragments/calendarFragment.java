@@ -30,6 +30,7 @@ public class calendarFragment extends Fragment {
 
     private FragmentCalendarBinding binding;
 
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
