@@ -14,13 +14,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="28dp"
-        tools:context=".EventAdaptor">
+        tools:context=".EventAdapter">
 
         <TextView
             android:id="@+id/eventName"
             android:layout_width="140dp"
             android:layout_height="30dp"
-            android:text="@{event.getKeyEventTitle()}"
+            android:text="test"
             android:textColor="@color/black"
             android:textSize="19dp" />
 

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="fragments.calendarFragment">
+    tools:context=".fragments.calendarFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:background="?android:attr/listDivider" />
 
         <TextView
-            android:id="@+id/saturday"
+            android:id="@+id/eventTitle"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="10dp"
@@ -32,9 +32,10 @@
             android:textSize="20dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="190dp"/>
 
         <Button
@@ -45,27 +46,9 @@
             android:layout_centerHorizontal="true"
             android:text="Add Event" />
 
-
-
-
     </RelativeLayout>
 
-<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--    <CalendarView-->
-<!--        android:layout_width="410dp"-->
-<!--        android:layout_height="300dp"-->
-<!--        android:layout_marginTop="150dp">-->
 
-<!--    </CalendarView>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/button2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginBottom="152dp"-->
-<!--        android:text="Add Events" />-->
 
 
 </layout>
