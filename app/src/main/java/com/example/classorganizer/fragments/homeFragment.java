@@ -74,14 +74,6 @@ public class homeFragment extends Fragment {
             }
         });
         queryCourse();
-
-        binding.tvEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getContext(), EditCourse.class);
-                startActivity(i);
-            }
-        });
     }
 
     private void queryCourse(){

@@ -24,6 +24,7 @@ public class ParseApplication extends Application {
         ParseObject.registerSubclass(Assignment.class);
         ParseObject.registerSubclass(Contact.class);
         ParseObject.registerSubclass(Course.class);
+        ParseObject.registerSubclass(Event.class);
 
 
 

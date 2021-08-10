@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new contactsFragment();
                         break;
                     case R.id.calendar:
-                        Toast.makeText(MainActivity.this, "Calendar", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Events", Toast.LENGTH_SHORT).show();
                         fragment = new calendarFragment();
                         break;
                     case R.id.logout:

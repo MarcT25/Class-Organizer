@@ -81,62 +81,6 @@
             android:layout_height="wrap_content"
             android:text="Add" />
 
-
-        <!--        <EditText
-                    android:id="@+id/editTextTextPersonName8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="32dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Event Name" />
-
-                <EditText
-                    android:id="@+id/etdate"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Start Date"
-                    android:textSize="32sp" />
-                <EditText
-                    android:id="@+id/etdate1"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:hint="End Date"
-                    android:textSize="32sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvtimer1"
-                    android:hint="Start Time"
-                    android:textSize="32sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:drawablePadding="16dp"
-                    android:background="@android:drawable/editbox_background"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvtimer2"
-                    android:hint="End Time"
-                    android:textSize="32sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:drawablePadding="16dp"
-                    android:background="@android:drawable/editbox_background"/>
-                <EditText
-                    android:id="@+id/editTextTextPersonName1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="32dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Duration" />-->
-
-
-
     </LinearLayout>
 
 </layout>
