@@ -59,16 +59,6 @@ public class calendarFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        //instantiate all courses to be a new 'arraylist'
-        //adapter will now be 'matched' with the assignmentAdapter to the new list
-//        allEvents = new ArrayList<>();
-//        adapter = new EventAdapter(this.getContext(), allEvents);
-//
-//        //we bind the adapter to the recyclerview so that things will actually show
-//        binding.recyclerView.setAdapter(adapter);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext() );
-//        binding.recyclerView.setLayoutManager(layoutManager);
-
     }
 
     @Override
@@ -84,6 +74,16 @@ public class calendarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentCalendarBinding.bind(view);
+
+        //instantiate all courses to be a new 'arraylist'
+        //adapter will now be 'matched' with the assignmentAdapter to the new list
+        allEvents = new ArrayList<>();
+        adapter = new EventAdapter(this.getContext(), allEvents);
+
+        //we bind the adapter to the recyclerview so that things will actually show
+        binding.recyclerView.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext() );
+        binding.recyclerView.setLayoutManager(layoutManager);
 
         binding.btnAdd1.setOnClickListener(new View.OnClickListener() {
             @Override
