@@ -22,6 +22,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import org.parceler.Parcels;
+
 public class SignUpActivity extends AppCompatActivity {
     public static final String TAG = "SignUpActivity";
     private ActivitySignUpBinding binding;
@@ -114,19 +116,40 @@ public class SignUpActivity extends AppCompatActivity {
         user.setPassword(etPassword.getText().toString());
         user.setEmail(etEmail.getText().toString());
         user.put("firstName", etFirst.getText().toString());
-        user.put("lastName", etLast.getText().toString());
-
+        user.put("lastname", etLast.getText().toString());
 
         String username = etUsername.getText().toString();
         String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
+
+
+        /*
+            REGEX EXPRESSION
+                (?=.*[0-9]) a digit must occur at least once
+                (?=.*[a-z]) a lower case letter must occur at least once
+                (?=.*[A-Z]) an upper case letter must occur at least once
+                (?!=.*[@#$%^&+=]) a special character must occur at least once
+                (?=\\S+$) no whitespace allowed in the entire string
+                .{6,} at least 6 characters
+         */
+
+        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!=\\S+$).{6,}";
+
+        Boolean checker = true;         //REMEMBER TO SWITCH BACK TO FALSE AFTER YOU ARE DONE TESTING
+
+        String password= etPassword.getText().toString();
         String pdConfirm = (etConfirmPwd.getText()).toString();
+
+        /*
+        if (password.matches(pattern) && pdConfirm.matches(pattern)){
+            checker = true;
+        }
+        */
 
         if (email.isEmpty()) {
             Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (password.equals(pdConfirm)) {
+        if (password.equals(pdConfirm) && checker == true) {
             // Invoke signUpInBackground
             user.signUpInBackground(new SignUpCallback() {
                 public void done(ParseException e) {
@@ -155,10 +178,15 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(SignUpActivity.this, "Issue with login", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Intent i = new Intent(SignUpActivity.this, SchoolSignUpActivity.class);
+                //i.putExtra("user", Parcels.wrap(user1));
+                startActivity(i);
+                finish();
                 //Navigate to the main activity if the user has signed in properly
-                goMainActivity();
+                //goMainActivity();
             }
         });
+
     }
 
     private void goMainActivity() {

@@ -26,10 +26,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/fileprovider" />
         </provider>
+        <activity android:name=".EditCourse"/>
         <activity android:name=".SearchCourseActivity"/>
         <activity android:name=".SchoolSignUpActivity"/>
         <activity android:name=".SignUpActivity"/>
         <activity android:name=".MainActivity"/>
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

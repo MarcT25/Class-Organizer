@@ -2,4 +2,10 @@
     <string name="app_name">Class Organizer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="school_name">
+        <item>Hunter</item>
+        <item>LaGuardia</item>
+    </string-array>
+    
 </resources>
