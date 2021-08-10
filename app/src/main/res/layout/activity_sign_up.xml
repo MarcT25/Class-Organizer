@@ -13,6 +13,7 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:liftOnScroll="true">
@@ -21,8 +22,8 @@
                     android:id="@+id/topAppBar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:title="Register"
-                    app:navigationIcon="@drawable/ic_back" />
+                    app:navigationIcon="@drawable/ic_back"
+                    app:title="Register" />
 
             </com.google.android.material.appbar.AppBarLayout>
 

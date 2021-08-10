@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.classorganizer.databinding.ActivitySearchCoursesBinding;
+import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
@@ -39,37 +40,67 @@ public class SearchCourseActivity extends AppCompatActivity {
           binding.autoCompleteTextView1.setAdapter(arrayAdapter_course);
           binding.autoCompleteTextView1.setThreshold(1);
 
-          binding.autoCompleteTextView2.setAdapter(arrayAdapter_course);
+/*          binding.autoCompleteTextView2.setAdapter(arrayAdapter_course);
           binding.autoCompleteTextView2.setThreshold(1);
 
           binding.autoCompleteTextView3.setAdapter(arrayAdapter_course);
-          binding.autoCompleteTextView3.setThreshold(1);
+          binding.autoCompleteTextView3.setThreshold(1);*/
 
 
           binding.btnDone.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
                   String schoolName1 = binding.autoCompleteTextView1.getText().toString();
-                  String schoolName2 = binding.autoCompleteTextView2.getText().toString();
+/*                  String schoolName2 = binding.autoCompleteTextView2.getText().toString();
                   String schoolName3 = binding.autoCompleteTextView3.getText().toString();
 
                   if (schoolName1 != null){
                       saveCourse(schoolName1,ParseUser.getCurrentUser());
                   }
-                  if (schoolName2 != null){
+/                 if (schoolName2 != null){
                       saveCourse(schoolName2,ParseUser.getCurrentUser());
                   }
                   if (schoolName3 != null){
                       saveCourse(schoolName3,ParseUser.getCurrentUser());
-                  }
+                  }*/
 
-                  Intent i = new Intent(SearchCourseActivity.this, MainActivity.class);
+/*                  Intent i = new Intent(SearchCourseActivity.this, MainActivity.class);
                   startActivity(i);
-                  finish();
+                  finish();*/
+
+                  String username = "test";
+                  String password = "test";
+
+                  loginUser(username, password);
               }
           });
 
       }
+
+
+    private void loginUser(String username, String password){
+        Log.i(TAG, "Login works!");
+
+        ParseUser.logInInBackground(username, password, new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+                if (e != null){
+                    Log.i(TAG, "Login failed!", e);
+                    Toast.makeText(SearchCourseActivity.this, "PLEASE CHECK LOGIN FOR ISSUE", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                //on success
+                goMainActivity();
+                Toast.makeText(SearchCourseActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        });
+    }
+    private void goMainActivity() {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
+    }
 
       private void saveCourse(String course, ParseUser currentUser){
           Course currentCourses = new Course();

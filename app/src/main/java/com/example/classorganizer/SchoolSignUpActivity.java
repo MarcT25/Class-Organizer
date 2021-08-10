@@ -32,7 +32,7 @@ public class SchoolSignUpActivity extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_sign_up_school);
 
-        ParseUser currentUser = ParseUser.getCurrentUser();
+        //ParseUser currentUser = ParseUser.getCurrentUser();
 
         //Exposed DropDown Menu using Spinner
         ArrayList<String> school_list = new ArrayList<>();
@@ -46,7 +46,7 @@ public class SchoolSignUpActivity extends AppCompatActivity {
         binding.autoCompleteTextView.setThreshold(1);
 
         //Log.i(TAG, "school name is " + schoolName);
-        Log.i(TAG, "Current ID is " + ParseUser.getCurrentUser().getObjectId());
+        //Log.i(TAG, "Current ID is " + ParseUser.getCurrentUser().getObjectId());
 
         binding.topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,8 +79,8 @@ public class SchoolSignUpActivity extends AppCompatActivity {
         binding.btnUserSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String schoolName = binding.autoCompleteTextView.getText().toString();
-                saveSchool(schoolName,currentUser);
+                //String schoolName = binding.autoCompleteTextView.getText().toString();
+                //saveSchool(schoolName,currentUser);
                 Intent i = new Intent(SchoolSignUpActivity.this, SearchCourseActivity.class);
                 startActivity(i);
                 finish();

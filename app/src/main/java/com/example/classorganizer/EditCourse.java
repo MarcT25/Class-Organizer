@@ -1,5 +1,6 @@
 package com.example.classorganizer;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -88,10 +89,13 @@ public class EditCourse extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //add to the Event Class
-                saveEvent(event.getText().toString(), date1.getText().toString(), date2.getText().toString(),
+                /*saveEvent(event.getText().toString(), date1.getText().toString(), date2.getText().toString(),
                         user
-                );
+                );*/
+                String string = "works";
                 Intent i = new Intent(EditCourse.this, calendarFragment.class);
+                i.putExtra("string",string);
+                //setResult(Activity.RESULT_OK,i);
                 finish();
             }
         });
