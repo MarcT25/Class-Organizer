@@ -9,6 +9,36 @@
         android:layout_height="match_parent"
         tools:context=".fragments.calendarFragment">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp"
+            android:layout_marginBottom="190dp"/>
+
+        <TextView
+            android:id="@+id/sampleEvent"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="70dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Name                           Start                End"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/example"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Job Fair                        18/7/21                19/7/21"
+            android:textColor="@color/black"
+            android:textSize="15dp"/>
+
+
         <TextView
             android:id="@+id/eventTitle"
             android:layout_width="match_parent"
@@ -21,14 +51,6 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="20dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="190dp"/>
-
         <Button
             android:id="@+id/btnAdd1"
             android:layout_width="wrap_content"
