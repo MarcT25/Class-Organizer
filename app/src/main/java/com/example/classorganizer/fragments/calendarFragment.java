@@ -76,10 +76,20 @@ public class calendarFragment extends Fragment {
         allEvents = new ArrayList<>();
         adapter = new EventAdapter(getContext(), allEvents);
 
-        //we bind the adapter to the recyclerview so that things will actually show
+/*        //we bind the adapter to the recyclerview so that things will actually show
         binding.recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext() );
-        binding.recyclerView.setLayoutManager(layoutManager);
+        binding.recyclerView.setLayoutManager(layoutManager);*/
+
+
+        binding.ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.tvName.setText("Exam Week");
+                binding.tvStart.setText("8/9/2021");
+                binding.tvEnd.setText("8/13/2021");
+            }
+        });
 
         binding.btnAdd1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,8 +101,5 @@ public class calendarFragment extends Fragment {
 
 
     }
-
-
-
 
 }
