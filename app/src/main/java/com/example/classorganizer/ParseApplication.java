@@ -15,13 +15,16 @@ public class ParseApplication extends Application {
         //ParseObject.registerSubclass(Post.class);
         //Registering User class
 
-        //ParseObject.registerSubclass(User.class);
+        ParseObject.registerSubclass(User.class);
+        ParseObject.registerSubclass(School.class);
+        ParseObject.registerSubclass(Course.class);
 
         //Registering Assignments Data Model as well as Contacts Data Model
         //ParseObject.registerSubclass(User.class);
         ParseObject.registerSubclass(Assignment.class);
         ParseObject.registerSubclass(Contact.class);
         ParseObject.registerSubclass(Course.class);
+        ParseObject.registerSubclass(Event.class);
 
 
 
