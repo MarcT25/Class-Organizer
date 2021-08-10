@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.classorganizer.databinding.FragmentCalendarBinding;
+import com.example.classorganizer.databinding.EventListItemBinding;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     public static final String TAG = "EventAdapter";
 
-    private FragmentCalendarBinding binding;
+    private EventListItemBinding binding;
 
     private Context context;
     private List<Event> events;
@@ -32,7 +32,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        binding = FragmentCalendarBinding.inflate(layoutInflater,parent,false);
+        binding = EventListItemBinding.inflate(layoutInflater,parent,false);
         return new ViewHolder(binding);
     }
 
@@ -49,9 +49,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        FragmentCalendarBinding binding;
+        EventListItemBinding binding;
 
-        public ViewHolder(FragmentCalendarBinding binding) {
+        public ViewHolder(EventListItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

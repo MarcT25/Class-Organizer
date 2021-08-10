@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="event"
+            type="com.example.classorganizer.Event" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        tools:context=".EventAdaptor">
+
+        <TextView
+            android:id="@+id/eventName"
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:text="@{event.getKeyEventTitle()}"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+
+        <TextView
+            android:id="@+id/eventStart"
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/eventName"
+            android:text="@{event.getKeyEventStart()}"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+
+        <TextView
+            android:id="@+id/eventEnd"
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/eventStart"
+            android:text="@{event.getKeyEventEnd()}"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+    </RelativeLayout>
+
+</layout>
