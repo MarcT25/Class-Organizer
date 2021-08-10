@@ -123,5 +123,3 @@ public class EditCourse extends AppCompatActivity {
 
 
 }
-
-

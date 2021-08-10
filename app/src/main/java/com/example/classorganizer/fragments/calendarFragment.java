@@ -65,9 +65,6 @@ public class calendarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //Intent i = new Intent(getContext(), MainActivity.class);
-        //startActivity(i);
         return inflater.inflate(R.layout.fragment_calendar, container, false);
     }
 
@@ -76,8 +73,6 @@ public class calendarFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = binding.bind(view);
 
-        //instantiate all courses to be a new 'arraylist'
-        //adapter will now be 'matched' with the assignmentAdapter to the new list
         allEvents = new ArrayList<>();
         adapter = new EventAdapter(getContext(), allEvents);
 
